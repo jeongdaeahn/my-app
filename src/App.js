@@ -1,9 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Comment from './Comment';
+
+const commnets = [
+  { name: 'an'},
+  { name: 'ok'},
+  { name: 'park'}
+];
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ padding:16, backgroundColor : 'pink'}}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +25,14 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        {commnets.map((comment, index) => {
+          return (
+            <Comment
+               name={comment.name} />
+          )
+        })}
+      </div>
     </div>
   );
 }
